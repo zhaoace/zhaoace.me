@@ -1,0 +1,40 @@
+
+
+<%= form_tag 'coc'  do %>
+
+
+     <h1><%= label_tag 'How many soldiers there?'%></h1> <br>
+
+
+    <table border='1'>
+        <tr>
+            <th>Name</th>
+            <th>Level</th>
+            <th>Count</th>
+        </tr>
+        <% SOLDIER.keys.each do |soldier|%>
+        <tr>
+            <td> <%= soldier %></td>
+            <td> 
+                <% default_lv = ((soldier == :healer )|| (soldier == :dragon )) ? 2 : 4  %>
+                <%= text_field_tag soldier.to_s+"_lv" , default_lv  %>
+            </td>
+            <td> 
+                <%= text_field_tag soldier.to_s , 0  %>
+            </td>
+        </tr>
+        <% end%>
+        <tr><td colspan='3' align='center'><%= submit_tag :Goooooooooooooooo! %></td></tr>
+    </table>
+     
+
+<% end %>
+
+
+
+<br><br><br>
+<%= @message %>  <br>
+
+<h2>food = <%= @food %> <br>
+water = <%= @water %> <br>
+</h2>

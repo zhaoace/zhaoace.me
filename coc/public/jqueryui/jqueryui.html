@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Slider - Range with fixed minimum</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  
+  <script>
+  $(function() {
+    $( "#slider-range-min" ).slider({
+      range: "min",
+      value: 37,
+      min: 1,
+      max: 700,
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "$" + ui.value );
+      }
+    });
+    $( "#amount" ).val( "$" + $( "#slider-range-min" ).slider( "value" ) );
+
+
+  	$( "#zhaoli-slider" ).slider({
+  		range: "min",
+  		value: 100,
+  		min: 1, 
+  		max:200,
+  		slide: function( event,ui ){
+        $( "#goblin" ).val(  ui.value );
+  			
+  		}
+  	})
+    $( "#goblin" ).val(  $( "#zhaoli-slider" ).slider( "value" ) );
+
+  }
+  );
+
+
+
+
+  </script>
+</head>
+<body>
+ 
+<p>
+  <label for="amount">Maximum price:</label>
+  <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+</p>
+ 
+<div id="slider-range-min"></div>
+
+
+<form accept-charset="UTF-8" action="/coc" method="post">><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="TtBknNYuJCF2v41xjZAiCJOEjd2xQviltYkiVZSLdNs="></div>     
+	<label for="zhaoli"> zhaoli-label</label>
+	<input type="text" id="goblin_lv" name="goblin_lv" value="4">
+	<input type="text" id="goblin" name="goblin" style="border:0; color:#f0430f; font-weight:bold;">
+    <input name="commit" type="submit" value="Goooooooooooooooo!">
+
+</form><!-- 
+<p>
+	<label for="zhaoli"> zhaoli-label</label>
+	<input type="text" id="zhaoli" style="border:0; color:#f0430f; font-weight:bold;">
+	<button type="submit">"submit"</button>
+</p> -->
+<div id="zhaoli-slider"></div>
+ 
+ 
+</body>
+</html>

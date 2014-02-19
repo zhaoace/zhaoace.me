@@ -1,7 +1,9 @@
 Coc::Application.routes.draw do
   get "static_pages/index"
-  get  "coc"=>"static_pages#coc"
   post "coc"=>"static_pages#coc"
+  get  "coc"=>"static_pages#coc"
+  get  "coc2"=>"static_pages#cocTool"
+  post  "coc2"=>"static_pages#cocTool"
 
   root "static_pages#index"
   # The priority is based upon order of creation: first created -> highest priority.

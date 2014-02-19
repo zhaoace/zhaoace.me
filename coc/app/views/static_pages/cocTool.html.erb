@@ -1,0 +1,103 @@
+cocTool.html.erb
+
+
+
+
+
+  
+  <script>
+
+
+   a = [
+  "barbarian",
+  "archer",
+  "goblin",
+  "giant",
+  "wallbreaker",
+  "balloon",
+  "wizard",
+  "healer",
+  "dragon",
+  ]
+
+
+$(function() {
+
+
+    $( "#"+a[i] ).val(  $( "#slider-"+a[i] ).slider( "value" ) );
+  
+    for (var i = 0; i < a.length; i++) {
+      
+        $( "#slider-"+a[i]).slider({
+            range: "min",
+            value: 100,
+            min: 1,
+            max:200,
+            slide: function( event,ui ){
+            $( "#"+a[i] ).val(  ui.value );
+                
+            }
+        });
+        $( "#"+a[i] ).val(  $( "#slider-"+a[i] ).slider( "value" ) );
+
+
+
+        console.log( "#"+a[i] );
+        console.log( "#slider-"+a[i]);
+        console.log($( "#slider-"+a[i] ).slider( "value" ));
+
+
+    }
+
+    
+    i=0;
+    $( "#slider-"+a[i]).slider({
+        range: "min",
+        value: 100,
+        min: 1,
+        max:200,
+        slide: function( event,ui ){
+        $( "#"+a[i] ).val(  ui.value );
+            
+        }
+    });
+    $( "#"+a[i] ).val(  $( "#slider-"+a[i] ).slider( "value" ) );
+
+
+}
+);
+
+  </script>
+
+
+
+<%= form_tag 'coc2'  do %>
+
+
+     <h1><%= label_tag 'How many soldiers there?'%></h1> <br>
+
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Level</th>
+            <th>Count</th>
+        </tr>
+        <% SOLDIER.keys.each do |soldier|%>
+        <tr>
+            <td> <%= soldier %></td>
+            <td> 
+                <% default_lv = ((soldier == :healer )|| (soldier == :dragon )) ? 2 : 4  %>
+                <%= text_field_tag soldier.to_s+"_lv" , default_lv  %>
+            </td>
+            <td> 
+                <%= text_field_tag soldier.to_s , 0  %>
+            </td>
+            
+        </tr>
+        <tr>      <div id="<%='slider-'+soldier.to_s%>"></div></tr>
+        <% end%>        
+    </table>
+    <%= submit_tag :Goooooooooooooooo! %>
+
+<% end %>

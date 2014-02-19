@@ -5,6 +5,17 @@ class StaticPagesController < ApplicationController
   def index
   end
 
+
+  def cocTool
+    myArmy = getArmyFromParams params 
+    # @message ||= myArmy.soldiers
+    @food = myArmy.food 
+    @water =  myArmy.water
+  end
+
+
+
+
   def coc
     myArmy = getArmyFromParams params 
     # @message ||= myArmy.soldiers

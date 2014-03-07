@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commander: MyString
+  barbarian_lv: 1
+  barbarian_count: 1
+  food: 1
+
+two:
+  commander: MyString
+  barbarian_lv: 1
+  barbarian_count: 1
+  food: 1

@@ -1,0 +1,67 @@
+<h1>Welcome#save</h1>
+<p>Find me in app/views/welcome/save.html.erb</p>
+
+
+
+
+
+<hr>
+<h1> army saved </h1>
+<% @armys.each do |army| %>
+   <%= army.commander %>
+   <%= army.barbarian_lv %>
+   <%= army.barbarian_count %>
+   <%= army.food %>
+<br>
+<% end %>
+
+
+
+<hr>
+<%= form_tag 'save'  do %>
+     <h1><%= label_tag 'How many soldiers there?'%></h1> <br>
+
+     <table class="table">        
+        <tr>
+            <th>    commander            </th>
+            <td>  <%= text_field_tag :commander , "nobody"  %> </td>
+        </tr>
+        <tr>
+            <th>    food            </th>
+            <td><%= text_field_tag :food , 0  %> </td>
+        </tr>        
+     </table>
+
+<br><br>
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Level</th>
+            <th>Count</th>
+        </tr>
+
+        <tr>
+            <td>    barbarian            </td>
+            <td> <%= text_field_tag :barbarian_lv , 4  %> </td>
+            <td> <%= text_field_tag :barbarian_count , 0  %> </td>
+        </tr>
+        <tr>
+            <td> <%= label_tag "要记录下来么？" %>    </td>
+            <td> <%= check_box_tag :save_record , true %>  </td>
+        </tr>
+
+    </table>
+
+    <%= submit_tag :Goooooooooooooooo! %>
+
+<% end %>
+
+
+
+<br><br><br>
+<%= @message %>  <br>
+
+<h2>food = <%= @food %> <br>
+water = <%= @water %> <br>
+</h2>

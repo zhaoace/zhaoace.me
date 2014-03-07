@@ -1,0 +1,23 @@
+<h1>Welcome#say</h1>
+<p>Find me in app/views/welcome/say.html.erb</p>
+
+
+
+<!-- <%=  @users %> -->
+
+<% @users.each do |user| %>
+    <%= user.name %>
+    <%= user.age %>
+    <br>
+<% end %>
+
+
+<hr>
+<h1> army saved </h1>
+<% @armys.each do |army| %>
+   <%= army.commander %>
+   <%= army.barbarian_lv %>
+   <%= army.barbarian_count %>
+   <%= army.food %>
+<br>
+<% end %>
